@@ -5,7 +5,7 @@ import './App.css';
 const questions = [
   {
     question: 'Qual é a capital do Brasil?',
-    options: ['Brasília efde edewrwe fim.', 'Rio de Janeiro.dasd asdasd ..asd .. aeda d.', 'São Paulosdsd sdfsdf  sdfsdf', 'Salva sdfsdf sdf dor'],
+    options: ['Brasílisdfsdf sdfsfsdf sdfsfs sdfdsfdf sdfs sdfsdf   sdfsdfsdfa efde edewrwe fim.', 'Rio de Janeiro. sdfsfd sdfsdf sdfsffff  dasd asdasd ..asd .. aeda d.', 'São Paulosdsd sdfsdf  sdfsdf', 'Salva sdfsdf sdf dor'],
     correctAnswerIndex: 0
   },
   {
