@@ -23,36 +23,19 @@
 
 .option {
   margin-bottom: 10px;
-  background-color: rgba(0, 0, 0, 0.3);
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   cursor: pointer;
   width: 100%;
   border-radius: 8px;
-  transition: background-color 0.5s, opacity 0.3s; /* Adiciona transições suaves para background-color e opacity */
   user-select: none;
-  opacity: 1; /* Define a opacidade inicial como 1 */
+  transition: border-color 0.3s; /* Adiciona transição suave para a cor da borda */
 }
 
 .option:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.option:active {
-  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.2);
 }
 
 .option.selected {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.result {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 20px;
-  text-align: left;
-}
-
-.fade-out {
-  opacity: 0; /* Define a opacidade como 0 para aplicar o efeito de fade */
+  border-color: green;
 }
