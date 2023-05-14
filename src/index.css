@@ -3,28 +3,21 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    }
-    
-    .options {
+  }
+  
+  .options {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    }
-    
-    .option {
+  }
+  
+  .option {
     margin-bottom: 10px;
-    user-select: none;
-    }
-    
-    .option.selected {
-    background-color: rgba(0, 0, 0, 0.1); /* Adiciona um estilo para a opção selecionada */
-    }
-    
-    .result {
+  }
+  
+  .result {
     font-size: 24px;
     font-weight: bold;
     margin-top: 20px;
-    }
-    
-    
+  }
