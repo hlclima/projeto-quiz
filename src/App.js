@@ -1,26 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
 
-const questions = [
-  {
-    question: 'Qual é a capital do Brasil?',
-    options: ['Brasília', 'Rio de Janeiro', 'São Paulo', 'Salvador'],
-    correctAnswerIndex: 0,
-  },
-  {
-    question: 'Qual é a capital de PE?',
-    options: ['Jaboatão', 'Olinda', 'Recife', 'Caruaru'],
-    correctAnswerIndex: 2,
-  },
-  {
-    question: 'Qual é a fórmula da água?',
-    options: ['O2', 'NaCl', 'CO2', 'H2O'],
-    correctAnswerIndex: 3,
-  },
-  // Adicione mais perguntas aqui...
-];
 
-const App = () => {
+const App = ({ questions }) => {
+
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState(new Array(questions.length).fill(null));
   const [showResult, setShowResult] = useState(false);
@@ -38,8 +21,8 @@ const App = () => {
   if (showResult) {
     // Contar as respostas corretas
     let correctAnswers = 0;
-    answers.forEach((answer, index) => {
-      if (answer === questions[index].correctAnswerIndex) {
+    questions.forEach((question, index) => {
+      if (answers[index] === question.correctAnswerIndex) {
         correctAnswers++;
       }
     });
