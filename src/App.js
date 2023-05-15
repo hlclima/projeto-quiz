@@ -1,12 +1,29 @@
 import React, { useState } from 'react';
 import './App.css';
+import { questionsProva1, questionsProva2, questionsProva3 } from './questionsBank';
 
 
-const App = ({ questions }) => {
+
+const App = ({ questionBankParam }) => {
+  // const questionBankParam = match.params.questionBankParam; // Obtém o parâmetro do request
+  console.log(questionBankParam);
+
+  // Determina o banco de questões com base no parâmetro do request
+  let questions;
+  if (questionBankParam === '1') {
+    questions = questionsProva1;
+  } else if (questionBankParam === '2') {
+    questions = questionsProva2;
+  } else if (questionBankParam === '3') {
+    questions = questionsProva3;
+  } else {
+    questions = []; // Define um valor padrão caso o parâmetro seja inválido
+  }
 
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState(new Array(questions.length).fill(null));
   const [showResult, setShowResult] = useState(false);
+
 
   const handleOptionSelect = (selectedOptionIndex) => {
     const updatedAnswers = [...answers];
