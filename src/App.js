@@ -2,13 +2,21 @@ import React, { useState } from 'react';
 import './App.css';
 import { questionsProva1, questionsProva2, questionsProva3 } from './questionsBank';
 
-
+const ConfirmationModal = ({ message, onConfirm, onCancel }) => {
+  return (
+    <div className="modal">
+      <div className="modal-content">
+        <p>{message}</p>
+        <div className="modal-buttons">
+        <button onClick={onCancel}>Revisar Respostas</button>
+          <button onClick={onConfirm}>Finalizar Exame</button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const App = ({ questionBankParam }) => {
-  // const questionBankParam = match.params.questionBankParam; // Obtém o parâmetro do request
-  console.log(questionBankParam);
-
-  // Determina o banco de questões com base no parâmetro do request
   let questions;
   if (questionBankParam === '1') {
     questions = questionsProva1;
@@ -17,13 +25,14 @@ const App = ({ questionBankParam }) => {
   } else if (questionBankParam === '3') {
     questions = questionsProva3;
   } else {
-    questions = []; // Define um valor padrão caso o parâmetro seja inválido
+    questions = [];
   }
 
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState(new Array(questions.length).fill(null));
   const [showResult, setShowResult] = useState(false);
-
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [showNavigation, setShowNavigation] = useState(true);
 
   const handleOptionSelect = (selectedOptionIndex) => {
     const updatedAnswers = [...answers];
@@ -32,11 +41,21 @@ const App = ({ questionBankParam }) => {
   };
 
   const handleSubmit = () => {
+    setShowConfirmation(true);
+    setShowNavigation(false);
+  };
+
+  const handleConfirm = () => {
+    setShowConfirmation(false);
     setShowResult(true);
   };
 
+  const handleCancel = () => {
+    setShowConfirmation(false);
+    setShowNavigation(true);
+  };
+
   if (showResult) {
-    // Contar as respostas corretas
     let correctAnswers = 0;
     questions.forEach((question, index) => {
       if (answers[index] === question.correctAnswerIndex) {
@@ -82,17 +101,26 @@ const App = ({ questionBankParam }) => {
             </div>
           ))}
         </div>
-        <div className="navigation-buttons">
-          {questionIndex > 0 && (
-            <button onClick={() => setQuestionIndex(questionIndex - 1)}>Anterior</button>
-          )}
-          {questionIndex < questions.length - 1 && (
-            <button onClick={() => setQuestionIndex(questionIndex + 1)}>Próxima</button>
-          )}
-          {questionIndex === questions.length - 1 && (
-            <button onClick={handleSubmit}>Submeter</button>
-          )}
-        </div>
+        {showNavigation && (
+          <div className="navigation-buttons">
+            {questionIndex > 0 && (
+              <button onClick={() => setQuestionIndex(questionIndex - 1)}>Anterior</button>
+            )}
+            {questionIndex < questions.length - 1 && (
+              <button onClick={() => setQuestionIndex(questionIndex + 1)}>Próxima</button>
+            )}
+            {questionIndex === questions.length - 1 && (
+              <button onClick={handleSubmit}>Submeter</button>
+            )}
+          </div>)
+        }
+        {showConfirmation && (
+          <ConfirmationModal
+            message='Clique em "Finalizar Exame" para concluir. Você não poderá alterar mais nenhuma resposta após esse passo. Caso tenha alguma dúvida pode clicar em "Revisar Respostas".'
+            onConfirm={handleConfirm}
+            onCancel={handleCancel}
+          />
+        )}
       </div>
     </div>
   );
