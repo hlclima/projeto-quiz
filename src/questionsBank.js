@@ -64,11 +64,6 @@ export const questionsProva2 = [
     correctAnswerIndex: 1,
   },
   {
-    question: 'Quais são os benefícios físicos do treinamento de karatê?',
-    options: ['Aumento da força e da flexibilidade', 'Melhoria do foco e da autoconfiança', 'Redução do estresse e da ansiedade', 'Todas as opções acima'],
-    correctAnswerIndex: 0,
-  },
-  {
     question: 'Qual é a importância do kata no karatê?',
     options: ['Desenvolver a resistência física', 'Melhorar o equilíbrio e a postura', 'Aprimorar a técnica e a força mental', 'Desenvolver a flexibilidade'],
     correctAnswerIndex: 2,
@@ -107,11 +102,6 @@ export const questionsProva2 = [
     question: 'O que significa o termo "gi" no karatê?',
     options: ['Uniforme de treinamento', 'Etiqueta e cortesia', 'Golpe poderoso', 'Posição de defesa'],
     correctAnswerIndex: 0,
-  },
-  {
-    question: 'O que é um "dojo" no contexto do karatê?',
-    options: ['Uniforme usado pelos praticantes de karatê', 'A filosofia subjacente ao karatê', 'Local onde ocorrem as aulas e treinos de karatê', 'Uma técnica avançada de golpe no karatê'],
-    correctAnswerIndex: 2,
   },
   // Adicione mais perguntas aqui...
 ];
