@@ -90,7 +90,7 @@ export const questionsProva2 = [
   },
   {
     question: 'No prática do Karatê Budo temos os conceitos de 心 (Shin), 技 (Gi) e 体 (Tai), que podem ser traduzidos livremente como:',
-    options: ['kata, kihon e kumite', 'Corpo, mente e espírito', 'Técnicas de esquivas', 'Jodan, chudan e gedan'],
+    options: ['Kata, kihon e kumite', 'Corpo, mente e espírito', 'Técnicas de esquivas', 'Jodan, chudan e gedan'],
     correctAnswerIndex: 1,
   },
   {
