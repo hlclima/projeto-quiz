@@ -6,7 +6,7 @@ export const questionsProva1 = [
     correctAnswerIndex: 2,
   },
   {
-    question: 'Qual é a faixa mais alta no sistema de graduação do karatê?',
+    question: 'Qual é a faixa mais alta no sistema de graduação do karatê shotokan?',
     options: ['Faixa vermelha e preta', 'Faixa preta', 'Faixa coral', 'Faixa dourada'],
     correctAnswerIndex: 1,
   },
@@ -17,7 +17,7 @@ export const questionsProva1 = [
   },
   {
     question: 'Qual é o significado da palavra "kiai" em japonês?',
-    options: ['Grito de guerra', 'Postura defensiva', 'Sequência de movimentos', 'Nenhuma das opções acima'],
+    options: ['Grito de energia', 'Postura defensiva', 'Sequência de movimentos', 'Nenhuma das opções acima'],
     correctAnswerIndex: 0,
   },
   {
@@ -26,14 +26,9 @@ export const questionsProva1 = [
     correctAnswerIndex: 1,
   },
   {
-    question: 'Qual é o país de origem do karatê?',
-    options: ['China', 'Japão', 'Coreia', 'Tailândia'],
-    correctAnswerIndex: 1,
-  },
-  {
-    question: 'Qual é o significado da palavra "karatê" em japonês?',
-    options: ['Caminho do guerreiro', 'Mão vazia', 'Caminho da espada', 'Punho forte'],
-    correctAnswerIndex: 1,
+    question: 'Qual dos seguintes não é considerado um estilo de karatê?',
+    options: ['Karate Combat', 'Goju-Ryu', 'Kyokushin', 'Wado-Ryu'],
+    correctAnswerIndex: 0,
   },
   {
     question: 'Qual é o principal foco do karatê?',
@@ -46,9 +41,14 @@ export const questionsProva1 = [
     correctAnswerIndex: 1,
   },
   {
-    question: 'Em que ano o karatê se tornou modalidade dos jogos olímpicos?',
+    question: 'Em que ano o karatê participou dos jogos olímpicos?',
     options: ['Seul 1988', 'Barcelona 1992', 'Tóquio 2020', 'Nunca foi incluído'],
     correctAnswerIndex: 2,
+  },
+  {
+    question: 'Qual é o termo japonês usado para descrever uma sequência de movimentos predefinidos no karatê?',
+    options: ['Dojo kun', 'Kumite', 'Budo', 'Kata'],
+    correctAnswerIndex: 3,
   },
   // Adicione mais perguntas aqui...
 ];
@@ -60,7 +60,7 @@ export const questionsProva2 = [
   },
   {
     question: 'O que é jyu kumite?',
-    options: ['Treinamento de movimentos de ataque e defesa', 'Treinamento de luta livre , sem regras', 'Sequência coreografada de movimentos', 'Nenhuma das opções acima'],
+    options: ['Treinamento de movimentos de ataque e defesa', 'Treinamento de luta livre, sem regras', 'Sequência coreografada de movimentos', 'Nenhuma das opções acima'],
     correctAnswerIndex: 1,
   },
   {
@@ -94,13 +94,23 @@ export const questionsProva2 = [
     correctAnswerIndex: 0,
   },
   {
-    question: 'Em que país o karatê foi desenvolvido?',
-    options: ['Japão', 'China', 'Coréia', 'Tailândia'],
-    correctAnswerIndex: 0,
+    question: 'No prática do Karatê Budo temos os conceitos de 心 (Shin), 技 (Gi) e 体 (Tai), que podem ser traduzidos livremente como:',
+    options: ['kata, kihon e kumite', 'Corpo, mente e espírito', 'Técnicas de esquivas', 'Jodan, chudan e gedan'],
+    correctAnswerIndex: 1,
   },
   {
     question: 'Migi e Hidari siginificam:',
     options: ['Meditação', 'Começo e término de uma luta', 'Direita e Esquerda', 'São kata avançados'],
+    correctAnswerIndex: 2,
+  },
+  {
+    question: 'O que significa o termo "gi" no karatê?',
+    options: ['Uniforme de treinamento', 'Etiqueta e cortesia', 'Golpe poderoso', 'Posição de defesa'],
+    correctAnswerIndex: 0,
+  },
+  {
+    question: 'O que é um "dojo" no contexto do karatê?',
+    options: ['Uniforme usado pelos praticantes de karatê', 'A filosofia subjacente ao karatê', 'Local onde ocorrem as aulas e treinos de karatê', 'Uma técnica avançada de golpe no karatê'],
     correctAnswerIndex: 2,
   },
   // Adicione mais perguntas aqui...
