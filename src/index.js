@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 
+const urlParams = new URLSearchParams(window.location.search);
+const questionBankParam = urlParams.get('questionBankParam');
+
+
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <App questionBankParam={questionBankParam} />,
   document.getElementById('root')
 );

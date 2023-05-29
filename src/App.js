@@ -1,29 +1,38 @@
 import React, { useState } from 'react';
 import './App.css';
+import { questionsProva1, questionsProva2, questionsProva3 } from './questionsBank';
 
-const questions = [
-  {
-    question: 'Qual é a capital do Brasil?',
-    options: ['Brasília', 'Rio de Janeiro', 'São Paulo', 'Salvador'],
-    correctAnswerIndex: 0,
-  },
-  {
-    question: 'Qual é a capital de PE?',
-    options: ['Jaboatão', 'Olinda', 'Recife', 'Caruaru'],
-    correctAnswerIndex: 2,
-  },
-  {
-    question: 'Qual é a fórmula da água?',
-    options: ['O2', 'NaCl', 'CO2', 'H2O'],
-    correctAnswerIndex: 3,
-  },
-  // Adicione mais perguntas aqui...
-];
+const ConfirmationModal = ({ message, onConfirm, onCancel }) => {
+  return (
+    <div className="modal">
+      <div className="modal-content">
+        <p>{message}</p>
+        <div className="modal-buttons">
+        <button onClick={onCancel}>Revisar Respostas</button>
+          <button onClick={onConfirm}>Finalizar Exame</button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-const App = () => {
+const App = ({ questionBankParam }) => {
+  let questions;
+  if (questionBankParam === '1') {
+    questions = questionsProva1;
+  } else if (questionBankParam === '2') {
+    questions = questionsProva2;
+  } else if (questionBankParam === '3') {
+    questions = questionsProva3;
+  } else {
+    questions = [];
+  }
+
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState(new Array(questions.length).fill(null));
   const [showResult, setShowResult] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [showNavigation, setShowNavigation] = useState(true);
 
   const handleOptionSelect = (selectedOptionIndex) => {
     const updatedAnswers = [...answers];
@@ -32,14 +41,24 @@ const App = () => {
   };
 
   const handleSubmit = () => {
+    setShowConfirmation(true);
+    setShowNavigation(false);
+  };
+
+  const handleConfirm = () => {
+    setShowConfirmation(false);
     setShowResult(true);
   };
 
+  const handleCancel = () => {
+    setShowConfirmation(false);
+    setShowNavigation(true);
+  };
+
   if (showResult) {
-    // Contar as respostas corretas
     let correctAnswers = 0;
-    answers.forEach((answer, index) => {
-      if (answer === questions[index].correctAnswerIndex) {
+    questions.forEach((question, index) => {
+      if (answers[index] === question.correctAnswerIndex) {
         correctAnswers++;
       }
     });
@@ -82,17 +101,26 @@ const App = () => {
             </div>
           ))}
         </div>
-        <div className="navigation-buttons">
-          {questionIndex > 0 && (
-            <button onClick={() => setQuestionIndex(questionIndex - 1)}>Anterior</button>
-          )}
-          {questionIndex < questions.length - 1 && (
-            <button onClick={() => setQuestionIndex(questionIndex + 1)}>Próxima</button>
-          )}
-          {questionIndex === questions.length - 1 && (
-            <button onClick={handleSubmit}>Submeter</button>
-          )}
-        </div>
+        {showNavigation && (
+          <div className="navigation-buttons">
+            {questionIndex > 0 && (
+              <button onClick={() => setQuestionIndex(questionIndex - 1)}>Anterior</button>
+            )}
+            {questionIndex < questions.length - 1 && (
+              <button onClick={() => setQuestionIndex(questionIndex + 1)}>Próxima</button>
+            )}
+            {questionIndex === questions.length - 1 && (
+              <button onClick={handleSubmit}>Submeter</button>
+            )}
+          </div>)
+        }
+        {showConfirmation && (
+          <ConfirmationModal
+            message='Clique em "Finalizar Exame" para concluir. Você não poderá alterar mais nenhuma resposta após esse passo. Caso tenha alguma dúvida pode clicar em "Revisar Respostas".'
+            onConfirm={handleConfirm}
+            onCancel={handleCancel}
+          />
+        )}
       </div>
     </div>
   );

@@ -19,6 +19,7 @@
   flex-direction: column;
   align-items: flex-start;
   margin-top: 20px;
+  padding-right: 10px; /* Adiciona um espaçamento à direita para evitar que os retângulos toquem a borda direita */
 }
 
 .option {
@@ -30,6 +31,7 @@
   border-radius: 8px;
   user-select: none;
   transition: border-color 0.3s; /* Adiciona transição suave para a cor da borda */
+  box-sizing: border-box; /* Adiciona o box-sizing para incluir a espessura da borda no cálculo total do tamanho do elemento */
 }
 
 .option:hover {
@@ -38,4 +40,5 @@
 
 .option.selected {
   border-color: green;
+  border-width: 3px;
 }
