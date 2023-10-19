@@ -1,7 +1,7 @@
 //import { questionsProva1, questionsProva2, questionsProva3 } from './questions'; // Importar as listas de perguntas
 export const questionsProva1 = [
   {
-    question: 'Quem é considerado o fundador do estilo Shotokan de karatê?',
+    question: 'teste Quem é considerado o fundador do estilo Shotokan de karatê?',
     options: ['Masutatsu Oyama', 'Chojun Miyagi', 'Gichin Funakoshi', 'Kenwa Mabuni'],
     correctAnswerIndex: 2,
   },
