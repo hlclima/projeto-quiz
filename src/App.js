@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { questionsProva1, questionsProva2, questionsProva3 } from './questionsBank';
+import html2canvas from 'html2canvas';
 
 const ConfirmationModal = ({ message, onConfirm, onCancel }) => {
   return (
@@ -15,6 +16,20 @@ const ConfirmationModal = ({ message, onConfirm, onCancel }) => {
     </div>
   );
 };
+
+const handleShareJPEG = () => {
+  const content = document.getElementById('result-content');
+
+  html2canvas(content).then((canvas) => {
+    const imgData = canvas.toDataURL('image/jpeg');
+    const link = document.createElement('a');
+    link.href = imgData;
+    link.download = 'resultado.jpg';
+    link.click();
+  });
+};
+
+
 
 const App = ({ questionBankParam }) => {
   let questions;
@@ -66,20 +81,23 @@ const App = ({ questionBankParam }) => {
     return (
       <div className="App">
         <div className="container">
-          <h1>Resultado</h1>
-          <div className="result">
-            Você acertou {correctAnswers} de {questions.length} questões.
+          <div id="result-content">
+            <h1>Resultado</h1>
+            <div className="result">
+              Você acertou {correctAnswers} de {questions.length} questões.
+            </div>
+            <div className="answer-summary">
+              <h2>Respostas:</h2>
+              {questions.map((question, index) => (
+                <p key={index}>
+                  <strong>{question.question}</strong>
+                  <br />
+                  Sua resposta: {question.options[answers[index]]}
+                </p>
+              ))}
+            </div>
           </div>
-          <div className="answer-summary">
-            <h2>Respostas:</h2>
-            {questions.map((question, index) => (
-              <p key={index}>
-                <strong>{question.question}</strong>
-                <br />
-                Sua resposta: {question.options[answers[index]]}
-              </p>
-            ))}
-          </div>
+          <button onClick={handleShareJPEG}>Compartilhar JPEG</button>
         </div>
       </div>
     );
