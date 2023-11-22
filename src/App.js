@@ -20,7 +20,10 @@ const ConfirmationModal = ({ message, onConfirm, onCancel }) => {
 const handleShareJPEG = () => {
   const content = document.getElementById('result-content');
 
-  html2canvas(content).then((canvas) => {
+  const scale = 2; // Ajuste conforme necessário para a resolução desejada
+  const width = content.offsetWidth; // Obtém a largura do conteúdo
+
+  html2canvas(content, { scale, width }).then((canvas) => {
     const imgData = canvas.toDataURL('image/jpeg');
     const link = document.createElement('a');
     link.href = imgData;
@@ -37,8 +40,10 @@ const App = ({ questionBankParam }) => {
     questions = questionsProva1;
   } else if (questionBankParam === '2') {
     questions = questionsProva2;
-  } else if (questionBankParam === '3') {
-    questions = questionsProva3;
+  } else if (questionBankParam === 'ef9739cc') {
+     questions = questionsProva3;
+  } else if (questionBankParam === '769e6876') {
+     questions = questionsProva4;
   } else {
     questions = [];
   }
