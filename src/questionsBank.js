@@ -113,3 +113,11 @@ export const questionsProva3 = [
   },
   // Adicione mais perguntas aqui...
 ];
+export const questionsProva4 = [
+  {
+    question: '???',
+    options: ['1', '2', '3', '4'],
+    correctAnswerIndex: 2,
+  },
+  // Adicione mais perguntas aqui...
+];
