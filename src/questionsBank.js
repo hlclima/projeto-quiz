@@ -106,18 +106,109 @@ export const questionsProva2 = [
   // Adicione mais perguntas aqui...
 ];
 export const questionsProva3 = [
-  {
-    question: '???',
-    options: ['1', '2', '3', '4'],
-    correctAnswerIndex: 2,
-  },
+    {
+        question: 'Preencher a frase a seguir: o karate começa e termina sempre com ___________?',
+        options: ['oss', 'agressão', 'saudação', 'iamê'],
+        correctAnswerIndex: 2,
+    },
+    {
+        question: 'Qual é a faixa mais alta no sistema de graduação do karatê shotokan?',
+        options: ['Faixa vermelha e preta', 'Faixa preta', 'Faixa coral', 'Faixa dourada'],
+        correctAnswerIndex: 1,
+    },
+    {
+        question: 'Qual dos seguintes não é considerado um estilo de karatê?',
+        options: ['Karate JUTSU', 'Goju-Ryu', 'Kyokushin', 'Shorin-Ryu'],
+        correctAnswerIndex: 0,
+    },
+    {
+        question: 'Qual é o principal foco do karatê?',
+        options: ['Técnicas de imobilização', 'Técnicas de projeção', 'Técnicas de ataque e defesa com as mãos e pés', 'Técnicas de estrangulamento'],
+        correctAnswerIndex: 2,
+    },
+    {
+        question: 'Em que edição o karatê participou dos jogos olímpicos?',
+        options: ['Seul 1988', 'Barcelona 1992', 'Tóquio 2020', 'Nunca foi incluído'],
+        correctAnswerIndex: 2,
+    },
+    {
+        question: 'Qual é o termo japonês usado para descrever uma sequência de movimentos predefinidos no karatê?',
+        options: ['Dojo kun', 'Kumite', 'Budo', 'Kata'],
+        correctAnswerIndex: 3,
+    },
+    {
+        question: 'Qual desses kata é considerado mais avançado no estilo Shotokan de karatê?',
+        options: ['Bassai Dai', 'Tekki Shodan', 'Gojushiho Sho', 'Não existe kata avançado'],
+        correctAnswerIndex: 2,
+    },
+    {
+        question: 'Técnicas de esquivas são denominadas de:',
+        options: ['jun kaiten', 'tai no sen', 'tai sabaki', 'gyaku hami'],
+        correctAnswerIndex: 2,
+    },
+    {
+        question: 'Quais eram os nomes dos dois mestres de funakoshi?',
+        options: ['Asato e Itosu', 'Myagi e Oyama', 'Machida e Tanaka', 'Kanazawa e Nakayama'],
+        correctAnswerIndex: 0,
+    },
+    {
+        question: 'Quais desses golpes não é uma técnica de soco (zuki)?',
+        options: ['mawashi zuki', 'mikazuki', 'tate zuki', 'ura zuki'],
+        correctAnswerIndex: 1,
+    },
   // Adicione mais perguntas aqui...
 ];
 export const questionsProva4 = [
-  {
-    question: '???',
-    options: ['1', '2', '3', '4'],
-    correctAnswerIndex: 2,
-  },
+    {
+        question: 'Qual é o nome da técnica de defesa pessoal no karatê?',
+        options: ['Kihon', 'Kumite', 'Yakusoku kumite', 'Goshin jutsu'],
+        correctAnswerIndex: 3,
+    },
+    {
+        question: 'O que é jyu kumite?',
+        options: ['Treinamento de movimentos de ataque e defesa', 'Treinamento de luta livre, sem regras', 'Sequência coreografada de movimentos', 'Nenhuma das opções acima'],
+        correctAnswerIndex: 1,
+    },
+    {
+        question: 'O que é embussen?',
+        options: ['É o caminho que o karateca percorre na execução do kata', 'Técnica de foco e atenção', 'Contemplação silenciosa para limpar a mente', 'Um golpe de aplicação circular'],
+        correctAnswerIndex: 0,
+    },
+    {
+        question: 'Na prática do Karatê Budo temos os conceitos de 心 (Shin), 技 (Gi) e 体 (Tai), que podem ser traduzidos livremente como:',
+        options: ['Kata, kihon e kumite', 'Corpo, mente e espírito', 'Técnicas de esquivas', 'Jodan, chudan e gedan'],
+        correctAnswerIndex: 1,
+    },
+    {
+        question: 'Shomen significa:',
+        options: ['Atrás', 'À frente', 'De lado', 'Por fora'],
+        correctAnswerIndex: 1,
+    },
+    {
+        question: 'Técnicas de esquivas são denominadas de:',
+        options: ['jun kaiten', 'tai no sen', 'tai sabaki', 'gyaku hami'],
+        correctAnswerIndex: 2,
+    },
+    {
+        question: 'Qual dos kata abaixo não faz parte do estilo Shotokan?',
+        options: ['bassai sho', 'mekyo', 'wankan', 'anan dai'],
+        correctAnswerIndex: 3,
+    },
+    {
+        question: 'Qual das descrições abaixo se assemelha ao DEAI do karate?',
+        options: ['Ippon', 'Sen no sen', 'Go no sen', 'Tai no sen'],
+        correctAnswerIndex: 3,
+    },
+    {
+        question: 'Quais dessas frases não são atribuídas ao nijukun?',
+        options: ['O karatê não se limita apenas à academia.', 'O karaté é uma arte marcial milenar.', 'O espírito precede a técnica.', 'Não se esqueça que o karatê deve iniciar com saudação e terminar com saudação.'],
+        correctAnswerIndex: 1,
+    },
+
+    {
+        question: 'Quais das alternativas abaixo não é considerado uma arma do corpo?',
+        options: ['hiza', 'teisho', 'kumade', 'zanshin'],
+        correctAnswerIndex: 3,
+    },
   // Adicione mais perguntas aqui...
 ];
